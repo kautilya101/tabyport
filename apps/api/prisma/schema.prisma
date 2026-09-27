@@ -1,0 +1,67 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid()) @db.Uuid
+  username  String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+
+  devices Device[]
+
+  @@map("users")
+}
+
+model Device {
+  id         String   @id @default(uuid()) @db.Uuid
+  deviceId   String   @unique @map("device_id")
+  userId     String   @map("user_id") @db.Uuid
+  name       String
+  createdAt  DateTime @default(now()) @map("created_at")
+  lastSeenAt DateTime @default(now()) @map("last_seen_at")
+
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sentMessages     Message[] @relation("SentMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
+
+  @@index([userId])
+  @@map("devices")
+}
+
+enum MessageType {
+  OPEN_WORKSPACE
+}
+
+enum MessageStatus {
+  PENDING
+  DELIVERED
+  COMPLETED
+  DISMISSED
+}
+
+model Message {
+  id               String        @id @default(uuid()) @db.Uuid
+  senderDeviceId   String        @map("sender_device_id")
+  receiverDeviceId String        @map("receiver_device_id")
+  type             MessageType
+  status           MessageStatus @default(PENDING)
+  payload          Json
+  createdAt        DateTime      @default(now()) @map("created_at")
+  deliveredAt      DateTime?     @map("delivered_at")
+  completedAt      DateTime?     @map("completed_at")
+  dismissedAt      DateTime?     @map("dismissed_at")
+
+  sender   Device @relation("SentMessages", fields: [senderDeviceId], references: [deviceId], onDelete: Cascade)
+  receiver Device @relation("ReceivedMessages", fields: [receiverDeviceId], references: [deviceId], onDelete: Cascade)
+
+  @@index([receiverDeviceId, status])
+  @@index([senderDeviceId])
+  @@index([createdAt])
+  @@map("messages")
+}

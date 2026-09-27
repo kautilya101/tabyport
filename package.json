@@ -1,0 +1,16 @@
+{
+  "name": "tabyport",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build:shared": "npm run build -w @tabyport/shared",
+    "dev:api": "npm run build:shared && npm run dev -w @tabyport/api",
+    "dev:extension": "npm run build:shared && npm run dev -w @tabyport/extension",
+    "build": "npm run build:shared && npm run build -w @tabyport/api && npm run build -w @tabyport/extension",
+    "typecheck": "npm run build:shared && npm run typecheck --workspaces --if-present"
+  }
+}

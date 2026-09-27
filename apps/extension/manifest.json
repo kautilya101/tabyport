@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Tabyport",
+  "description": "Send a browser workspace to another one of your devices.",
+  "version": "0.1.0",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Tabyport",
+    "default_popup": "src/popup/index.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "alarms", "tabs", "notifications"],
+  "host_permissions": []
+}

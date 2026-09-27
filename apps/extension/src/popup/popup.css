@@ -1,0 +1,202 @@
+:root {
+  --bg: #ffffff;
+  --surface: #f5f6f8;
+  --border: #e2e4e9;
+  --text: #1c1e21;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --primary-text: #ffffff;
+  --success: #15803d;
+  --danger: #b91c1c;
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18191c;
+    --surface: #222429;
+    --border: #33363d;
+    --text: #e8e9eb;
+    --muted: #9ca3af;
+    --primary: #3b82f6;
+    --success: #4ade80;
+    --danger: #f87171;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.popup {
+  width: 340px;
+  min-height: 120px;
+  padding: 16px;
+}
+
+.popup__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stack--tight {
+  gap: 8px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.card--highlight {
+  border-color: var(--primary);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.actions .button {
+  flex: 1;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  color: var(--danger);
+}
+
+.success {
+  color: var(--success);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field input,
+.field select {
+  padding: 8px 10px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.hint--invalid {
+  color: var(--danger);
+}
+
+.button {
+  padding: 8px 12px;
+  font: inherit;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-text);
+}
+
+.device-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.device-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.device-list__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+}
+
+.device-list__item + .device-list__item {
+  border-top: 1px solid var(--border);
+}
+
+.status {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status--online {
+  color: var(--success);
+}
+
+.status--offline {
+  color: var(--muted);
+}

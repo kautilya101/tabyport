@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tabyport Privacy Policy</title>
+    <meta name="description" content="How the Tabyport Chrome extension collects, uses, stores and deletes your data." />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --surface: #f5f6f8;
+        --border: #e2e4e9;
+        --text: #1c1e21;
+        --muted: #5b6270;
+        --accent: #2563eb;
+        --warn-bg: #fff7e6;
+        --warn-border: #f0b429;
+        --placeholder-bg: #fde68a;
+        --placeholder-text: #1c1e21;
+        color-scheme: light;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #18191c;
+          --surface: #222429;
+          --border: #33363d;
+          --text: #e8e9eb;
+          --muted: #a3a9b4;
+          --accent: #60a5fa;
+          --warn-bg: #2b2415;
+          --warn-border: #b7862b;
+          --placeholder-bg: #b7862b;
+          --placeholder-text: #18191c;
+          color-scheme: dark;
+        }
+      }
+
+      :root[data-theme="dark"] {
+        --bg: #18191c;
+        --surface: #222429;
+        --border: #33363d;
+        --text: #e8e9eb;
+        --muted: #a3a9b4;
+        --accent: #60a5fa;
+        --warn-bg: #2b2415;
+        --warn-border: #b7862b;
+        --placeholder-bg: #b7862b;
+        --placeholder-text: #18191c;
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 16px 80px;
+      }
+
+      header {
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        margin: 40px 0 12px;
+        font-size: 1.25rem;
+      }
+
+      h3 {
+        margin: 24px 0 8px;
+        font-size: 1.05rem;
+      }
+
+      p,
+      ul {
+        margin: 0 0 16px;
+      }
+
+      li + li {
+        margin-top: 6px;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      code {
+        padding: 1px 5px;
+        font-size: 0.9em;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+      }
+
+      .meta {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .summary {
+        padding: 16px 20px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .summary ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .notice {
+        padding: 16px 20px;
+        background: var(--warn-bg);
+        border-left: 4px solid var(--warn-border);
+        border-radius: 4px;
+      }
+
+      .notice p:last-child {
+        margin-bottom: 0;
+      }
+
+      .placeholder {
+        padding: 0 4px;
+        font-weight: 600;
+        background: var(--placeholder-bg);
+        color: var(--placeholder-text);
+        border-radius: 3px;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        margin: 0 0 16px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+
+      th,
+      td {
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--border);
+      }
+
+      th {
+        font-weight: 600;
+        background: var(--surface);
+      }
+
+      footer {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Tabyport Privacy Policy</h1>
+        <p class="meta">Last updated: 29 September 2026</p>
+        <p class="meta">Publisher: <span class="placeholder">[PUBLISHER NAME]</span></p>
+      </header>
+
+      <p>
+        Tabyport is a Chrome extension that lets you send a group of browser tabs (a "workspace") from one of
+        your devices to another. This policy explains what data Tabyport handles, why, where it is stored, how
+        long it is kept, and how to have it deleted.
+      </p>
+
+      <section class="summary" aria-label="Summary">
+        <ul>
+          <li>Tab URLs and titles leave your device <strong>only when you click Send</strong>.</li>
+          <li>Tabyport does not collect your browsing history, track your browsing, show ads, or use analytics.</li>
+          <li>Your data is never sold and is not shared with anyone except the providers that host the service.</li>
+          <li>Opened or dismissed workspaces are deleted automatically after 30 days.</li>
+          <li>Tabyport has no passwords yet. Please read <a href="#security">Security</a> before using it.</li>
+        </ul>
+      </section>
+
+      <h2 id="data-we-collect">Data we collect</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">When it is collected</th>
+              <th scope="col">Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Username</td>
+              <td>When you set up the extension</td>
+              <td>To link your devices together. You choose it; it does not need to be your real name.</td>
+            </tr>
+            <tr>
+              <td>Device name</td>
+              <td>When you set up the extension</td>
+              <td>So you can recognise and choose a device, for example "Laptop".</td>
+            </tr>
+            <tr>
+              <td>Device ID</td>
+              <td>Generated on first use</td>
+              <td>A random identifier that tells your devices apart. It is not derived from your hardware.</td>
+            </tr>
+            <tr>
+              <td>Last-seen time</td>
+              <td>About every 30 seconds while Chrome is running</td>
+              <td>To show whether each of your devices is online or offline.</td>
+            </tr>
+            <tr>
+              <td>Workspace name, tab URLs and tab titles</td>
+              <td>Only when you click Send</td>
+              <td>To deliver the workspace to the device you chose.</td>
+            </tr>
+            <tr>
+              <td>Workspace status and timestamps</td>
+              <td>When a workspace is sent, received, opened or dismissed</td>
+              <td>To show waiting workspaces, and to avoid opening the same workspace twice.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Only web pages (<code>http</code> and <code>https</code> addresses) from the current window are
+        included in a workspace. Browser pages such as <code>chrome://</code> settings are skipped.
+      </p>
+
+      <h2 id="permissions">How the extension uses Chrome permissions</h2>
+      <ul>
+        <li>
+          <strong>Tabs:</strong> when you open the Tabyport popup, it reads the addresses and titles of the tabs
+          in your current window so it can show how many tabs will be sent. This information stays on your
+          device unless you click Send. The permission is also used to open the tabs of a workspace you choose
+          to open.
+        </li>
+        <li><strong>Storage:</strong> to keep your settings and a local copy of waiting workspaces on your device.</li>
+        <li><strong>Alarms:</strong> to check for new workspaces and report that the device is online about every 30 seconds.</li>
+        <li><strong>Notifications:</strong> to tell you when a workspace is waiting.</li>
+        <li><strong>Access to the Tabyport server:</strong> the extension only talks to the Tabyport server, and to no other website.</li>
+      </ul>
+      <p>Tabs from a workspace are only opened when you click Open Workspace. Tabyport never opens tabs on its own.</p>
+
+      <h2 id="how-we-use">How we use your data</h2>
+      <p>
+        Data is used only to provide Tabyport's single purpose: sending workspaces between your devices. We do
+        not use it for advertising, profiling, credit decisions, or any purpose unrelated to that feature, and
+        we do not sell it.
+      </p>
+      <p>
+        The use of information received from Chrome APIs complies with the
+        <a href="https://developer.chrome.com/docs/webstore/program-policies/policies" rel="noopener">Chrome Web Store User Data Policy</a>,
+        including the Limited Use requirements.
+      </p>
+
+      <h2 id="storage">Where your data is stored</h2>
+      <h3>On the Tabyport server</h3>
+      <p>
+        Your username, device names, device IDs, last-seen times and workspaces are stored in a database run by
+        the service's hosting provider. These providers store the data on our behalf and are not allowed to use
+        it for their own purposes.
+      </p>
+      <h3>On your device</h3>
+      <p>
+        The extension keeps its settings in Chrome's local extension storage: your device ID, username, device
+        name, a copy of workspaces waiting for this device, and the IDs of workspaces it has already opened or
+        notified you about. This data is removed when you uninstall the extension.
+      </p>
+
+      <h2 id="sharing">Sharing</h2>
+      <p>
+        We do not sell, rent or trade your data. It is not shared with third parties except the hosting and
+        database providers that run the service, or where the law requires us to disclose it.
+      </p>
+
+      <h2 id="retention">How long we keep data</h2>
+      <ul>
+        <li>
+          <strong>Opened or dismissed workspaces</strong>, including their tab URLs and titles, are deleted
+          automatically 30 days after you open or dismiss them.
+        </li>
+        <li>
+          <strong>Workspaces that are still waiting</strong> are kept until the receiving device opens or
+          dismisses them, so that a device that is offline for a while still receives them.
+        </li>
+        <li>
+          <strong>Your username, device names and device IDs</strong> are kept until you ask us to delete them.
+          Uninstalling the extension does not delete this server-side data.
+        </li>
+      </ul>
+
+      <h2 id="security">Security</h2>
+      <div class="notice">
+        <p>
+          <strong>Tabyport does not have passwords or login yet.</strong> Your devices are linked only by your
+          username. This means someone who knows or guesses your username could see the names of your devices,
+          send workspaces to them, and see workspaces that are waiting to be opened on them.
+        </p>
+        <p>
+          Please choose a username that is hard to guess, and do not send tabs whose addresses contain private
+          information, such as links with access tokens or personal details.
+        </p>
+      </div>
+      <p>
+        Data sent between the extension and the Tabyport server travels over encrypted HTTPS connections. We
+        will update this policy when stronger protection, such as device sign-in, is added.
+      </p>
+
+      <h2 id="your-choices">Your choices and rights</h2>
+      <ul>
+        <li>You decide what is sent: nothing leaves your device until you click Send.</li>
+        <li>You can dismiss any waiting workspace, and it will then be deleted after 30 days.</li>
+        <li>
+          You can ask for a copy of your data, or for your username, devices and workspaces to be deleted, by
+          emailing <span class="placeholder">[CONTACT EMAIL]</span>. Please include your username.
+        </li>
+      </ul>
+
+      <h2 id="children">Children</h2>
+      <p>Tabyport is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+      <h2 id="changes">Changes to this policy</h2>
+      <p>
+        If this policy changes, we will update the "Last updated" date above. Significant changes will also be
+        noted in the extension's Chrome Web Store listing.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Questions or requests about your data: <span class="placeholder">[CONTACT EMAIL]</span>
+      </p>
+
+      <footer>
+        <p>&copy; 2026 <span class="placeholder">[PUBLISHER NAME]</span>. Tabyport privacy policy.</p>
+      </footer>
+    </main>
+  </body>
+</html>

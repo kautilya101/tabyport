@@ -2,7 +2,7 @@
 
 > A browser extension to send your open tabs to another one of your devices.
 
-<!-- Add screenshots / GIF here, e.g. ![Tabyport popup](docs/screenshot.png) -->
+https://github.com/user-attachments/assets/bfa0a1d2-def8-4e11-a73f-9df466ea95ed
 
 Tabyport lets you pick up where you left off on another computer: it sends the tabs in your current window, as a named "workspace", to a specific device of yours, which can open them all with one click, even if it was offline when you sent them.
 
